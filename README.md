@@ -1,6 +1,6 @@
 # openhack-gitops
 
-** Pre-requisite **
+**Pre-requisite**
 * K8s Cluster
 * Ingress router [for DevOps application ngix router will be used]
 * DNS address to point traffic via istio-ingress and nginx-ingress
