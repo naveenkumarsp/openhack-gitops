@@ -1,0 +1,1 @@
+multipass launch --name microk8s-vm --mem 8G --disk 40G

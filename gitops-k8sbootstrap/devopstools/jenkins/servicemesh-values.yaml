@@ -135,8 +135,8 @@ master:
   # When setting runAsUser to a different value than 0 also set fsGroup to the same value:
   # runAsUser: <defaults to 0>
   # fsGroup: <will be omitted in deployment if runAsUser is 0>
-  servicePort: 8080
-  targetPort: 8080
+  servicePort: 80
+  targetPort: 80
   # For minikube, set this to NodePort, elsewhere use LoadBalancer
   # Use ClusterIP if your setup includes ingress controller
   serviceType: ClusterIP
@@ -181,9 +181,6 @@ master:
   # this will be an external load balancer and allowing inbound 0.0.0.0/0, a HUGE
   # security risk:  https://github.com/kubernetes/charts/issues/1341
   slaveListenerServiceType: "ClusterIP"
-  # Optionally assign an IP to the LoadBalancer slaveListenerService LoadBalancer
-  # GKE users: only regional static IPs will work for Service Load balancer.
-  # slaveListenerLoadBalancerIP: 1.2.3.4
   slaveListenerServiceAnnotations: {}
   slaveKubernetesNamespace:
 
@@ -218,7 +215,7 @@ master:
     - workflow-aggregator:2.6
     - credentials-binding:1.20
     - git:4.0.0
-
+    - blueocean:1.21.0
   # Enable to always override the installed plugins with the values of 'master.installPlugins' on upgrade or redeployment.
   # overwritePlugins: true
   # Enable HTML parsing using OWASP Markup Formatter Plugin (antisamy-markup-formatter), useful with ghprb plugin.
@@ -341,19 +338,19 @@ master:
   overwriteJobs: false
 
   ingress:
-    enabled: false
+    enabled: true
     # For Kubernetes v1.14+, use 'networking.k8s.io/v1beta1'
-    apiVersion: "extensions/v1beta1"
+    apiVersion: "networking.k8s.io/v1beta1"
     labels: {}
     annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
+      kubernetes.io/ingress.class: istio
+    #   kubernetes.io/tls-acme: "true"
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
     # configures the hostname e.g. jenkins.example.com
-    hostName:
+    hostName: jenkins.eqslearning.com
     tls:
-    # - secretName: jenkins.cluster.local
+      - secretName: jenkins-selfsigned-cert-tls
     #   hosts:
     #     - jenkins.cluster.local
 
