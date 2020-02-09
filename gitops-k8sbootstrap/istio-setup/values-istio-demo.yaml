@@ -78,4 +78,8 @@ gateways:
     resources:
       requests:
         cpu: 10m
+<<<<<<< HEAD
         memory: 40Mi
+=======
+        memory: 40Mi
+>>>>>>> istio chart name corrected
