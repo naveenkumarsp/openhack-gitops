@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio-demo
+  name: istio-config
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
 spec:
@@ -15,7 +15,8 @@ spec:
     chart: istio
     helm:
         valueFiles:
-        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/istio-setup/values-istio-demo.yaml
+        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/istio-setup/values-istio-minimal.yaml
+        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/istio-setup/values-istio-sds-auth.yaml
 
   # Destination cluster and namespace to deploy the application
   destination:
