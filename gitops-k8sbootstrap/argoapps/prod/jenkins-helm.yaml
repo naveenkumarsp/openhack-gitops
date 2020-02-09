@@ -10,9 +10,12 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://github.com/naveenkumarsp/gitops-k8sbootstrap.git
-    targetRevision: HEAD
-    path: "devopstools/jenkins"
+    repoURL: 'https://kubernetes-charts.storage.googleapis.com'
+    targetRevision: 1.9.16
+    chart: jenkins
+    helm:
+        valueFiles:
+        - https://raw.githubusercontent.com/naveenkumarsp/gitops-k8sbootstrap/master/devopstools/jenkins/prod-jenkins-values.yaml
 
   # Destination cluster and namespace to deploy the application
   destination:

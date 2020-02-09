@@ -42,7 +42,7 @@ ingress:
       # If a different path is defined, that path and {path}/* will be added to the ingress resource
       # path: /sonarqube
   annotations: {}
-    kubernetes.io/ingress.class: istio
+  # kubernetes.io/ingress.class: istio
   # kubernetes.io/tls-acme: "true"
   # This property allows for reports up to a certain size to be uploaded to SonarQube
   # nginx.ingress.kubernetes.io/proxy-body-size: "8m"
