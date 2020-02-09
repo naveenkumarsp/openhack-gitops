@@ -5,8 +5,6 @@ metadata:
   # You'll usually want to add your resources to the argocd namespace.
   namespace: argocd
 spec:
-  # The project the application belongs to.
-  project: default
 
   # Source of the application manifests
   source:
@@ -17,10 +15,6 @@ spec:
         valueFiles: 
         - https://raw.githubusercontent.com/naveenkumarsp/gitops-k8sbootstrap/master/devopstools/harbor/prod-harbor-values.yml
 
-  # Destination cluster and namespace to deploy the application
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
 
   # Sync policy
   syncPolicy:
