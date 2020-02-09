@@ -13,7 +13,7 @@ spec:
     chart: jenkins
     helm:
         valueFiles:
-        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/devopstools/jenkins/prod-jenkins-values.yaml
+        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/devopstools/jenkins/jenkins-values.yaml
 
   # Destination cluster and namespace to deploy the application
   destination:
