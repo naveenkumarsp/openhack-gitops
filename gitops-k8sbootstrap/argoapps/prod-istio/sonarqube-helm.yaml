@@ -10,9 +10,12 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: https://github.com/naveenkumarsp/gitops-k8sbootstrap.git
-    targetRevision: HEAD
-    path: "devopstools/sonarqube"
+    repoURL: 'https://kubernetes-charts.storage.googleapis.com'
+    targetRevision: 3.4.0
+    chart: sonarqube
+    helm:
+        valueFiles: 
+        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/devopstools/sonarqube/servicemesh-values.yaml
 
   # Destination cluster and namespace to deploy the application
   destination:
