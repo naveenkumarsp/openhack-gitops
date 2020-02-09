@@ -8,12 +8,12 @@ spec:
   issuerRef:
     name: letsencrypt-staging
     kind: ClusterIssuer
-  commonName: hello.eqslearning.com
+  commonName: gogs.eqslearning.com
   dnsNames:
-  - hello.eqslearning.com
+  - gogs.eqslearning.com
   acme:
     config:
     - http01:
         ingressClass: istio
       domains:
-      - hello.eqslearning.com
+      - gogs.eqslearning.com

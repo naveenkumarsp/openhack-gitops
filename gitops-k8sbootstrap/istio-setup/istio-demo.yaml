@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio
+  # You'll usually want to add your resources to the argocd namespace.
+  namespace: argocd
+spec:
+  # The project the application belongs to.
+  project: default
+
+  # Source of the application manifests
+  source:
+    repoURL: 'helm repo add istio.io https://storage.googleapis.com/istio-release/releases/1.4.3/charts/'
+    targetRevision: 1.4.3
+    chart: istio
+    helm:
+        valueFiles:
+        - https://raw.githubusercontent.com/naveenkumarsp/gitops-k8sbootstrap/master/devopstools/jenkins/katacoda-jenkins-values.yaml
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: istio-system
