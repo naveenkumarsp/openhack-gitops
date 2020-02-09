@@ -10,7 +10,7 @@ spec:
 
   # Source of the application manifests
   source:
-    repoURL: 'helm repo add istio.io https://storage.googleapis.com/istio-release/releases/1.4.3/charts/'
+    repoURL: 'https://storage.googleapis.com/istio-release/releases/1.4.3/charts/'
     targetRevision: 1.4.3
     chart: istio-init
 
