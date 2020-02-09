@@ -5,5 +5,5 @@ metadata:
 stringData:
   notifiers.yaml: |
     slack:
-      token: https://hooks.slack.com/services/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
+      token: https://hooks.slack.com/services/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
 type: Opaque
