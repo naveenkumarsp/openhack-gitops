@@ -5,7 +5,7 @@
 * Ingress router [for DevOps application ngix router will be used]
 * DNS address to point traffic via istio-ingress and nginx-ingress
 
-** Installation instruction ** 
+**Installation instruction** 
 1. All source files for installation listed in "pre-setup" directory.
 2. Install argocd, argorollout and cli using the commands listed in 0-argo_setup.txt.
 3. Configure the DNS to access the argocd over the internet.
