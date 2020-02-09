@@ -343,7 +343,7 @@ master:
     apiVersion: "networking.k8s.io/v1beta1"
     labels: {}
     annotations: {}
-      kubernetes.io/ingress.class: istio
+       kubernetes.io/ingress.class: istio
     #   kubernetes.io/tls-acme: "true"
     # Set this path to jenkinsUriPrefix above or use annotations to rewrite path
     # path: "/jenkins"
@@ -476,7 +476,7 @@ agent:
   slaveConnectTimeout: 100
 
 persistence:
-  enabled: true
+  enabled: false
   ## A manually managed Persistent Volume and Claim
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
