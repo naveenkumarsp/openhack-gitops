@@ -13,7 +13,7 @@ spec:
     chart: harbor
     helm:
         valueFiles: 
-        - https://raw.githubusercontent.com/naveenkumarsp/gitops-k8sbootstrap/master/devopstools/harbor/prod-harbor-values.yml
+        - https://raw.githubusercontent.com/naveenkumarsp/openhack-gitops/master/gitops-k8sbootstrap/devopstools/harbor/prod-harbor-values.yml
 
 
   # Sync policy
